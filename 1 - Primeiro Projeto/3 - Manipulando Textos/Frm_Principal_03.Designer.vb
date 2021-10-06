@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class Frm_TelaPrincipal_03
+Partial Class Frm_Principal_03
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.

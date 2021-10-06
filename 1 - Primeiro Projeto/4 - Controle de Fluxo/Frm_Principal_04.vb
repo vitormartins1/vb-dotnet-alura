@@ -1,4 +1,4 @@
-﻿Public Class Frm_TelaPrincipal_04
+﻿Public Class Frm_Principal_04
     Public Sub New()
         InitializeComponent()
 

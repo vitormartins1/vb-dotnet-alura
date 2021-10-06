@@ -1,4 +1,4 @@
-﻿Public Class Frm_TelaPrincipal_03
+﻿Public Class Frm_Principal_03
 
     Dim listaCurso As String
 
