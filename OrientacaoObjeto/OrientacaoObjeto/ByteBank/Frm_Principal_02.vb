@@ -200,4 +200,13 @@ Public Class Frm_Principal_02
             " Agência: " + ContaDaGabriela.Agencia.ToString +
             " Conta Corrente: " + ContaDaGabriela.Conta.ToString
     End Sub
+
+    Private Sub Btn_Nome_Bruno_Click(sender As Object, e As EventArgs) Handles Btn_Nome_Bruno.Click
+        Dim vNome As String = Txt_Nome_Bruno.Text
+        ContaDoBruno.Titular.Nome = vNome
+
+        Lbl_BemVindo_Bruno.Text = "Bem Vindo " + ContaDoBruno.Titular.Nome +
+            " Agência: " + ContaDoBruno.Agencia.ToString +
+            " Conta Corrente: " + ContaDoBruno.Conta.ToString
+    End Sub
 End Class
