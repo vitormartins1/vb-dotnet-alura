@@ -2,6 +2,12 @@
 
     Public Class Cliente
 
+        Public Sub New(m_Nome As String, m_CPF As String)
+            Nome = m_Nome
+            CPF = m_CPF
+            m_NumeroClientes += 1
+        End Sub
+
         Public Property Nome As String
 
         Private m_CPF As String
@@ -15,6 +21,13 @@
         End Property
         Public Property Profissao As String
         Public Property Cidade As String
+
+        Private Shared m_NumeroClientes As Integer
+        Public Shared ReadOnly Property NumeroClientes As Integer
+            Get
+                Return m_NumeroClientes
+            End Get
+        End Property
 
         Private Function TestaCPF(CPF As String) As String
             Dim dadosArray() As String = {"11111111111", "22222222222", "33333333333", "44444444444", "55555555555", "66666666666", "77777777777", "88888888888", "99999999999"}

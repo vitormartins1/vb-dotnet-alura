@@ -2,6 +2,10 @@
 
 Public Class ContaCorrente
 
+    Public Sub New(m_Saldo As Double)
+        Saldo = m_Saldo
+    End Sub
+
     Private m_Extrato As String = ""
     Public Property Extrato As String
         Get

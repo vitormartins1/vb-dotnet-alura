@@ -2,9 +2,9 @@
 
 Public Class Frm_Principal_02
 
-    Dim ContaDaGabriela As New ContaCorrente
-    Dim ContaDoBruno As New ContaCorrente
-    Dim Bruno As New Cliente
+    Dim ContaDaGabriela As New ContaCorrente(1000)
+    Dim ContaDoBruno As New ContaCorrente(500)
+    Dim Bruno As New Cliente("Bruno", "15638956789")
 
     Public Sub New()
 
@@ -42,15 +42,11 @@ Public Class Frm_Principal_02
         Lbl_Nome_Bruno.Text = "Nome"
         Btn_Nome_Bruno.Text = "..."
 
-        ContaDaGabriela.Titular = New Cliente()
-        ContaDaGabriela.Titular.Nome = "Gabriela"
-        ContaDaGabriela.Titular.CPF = "123456789"
+        ContaDaGabriela.Titular = New Cliente("Gabriela", "123456789")
         ContaDaGabriela.Titular.Profissao = "Analista de Sistemas"
         ContaDaGabriela.Titular.Cidade = "Rio de Janeiro"
         ContaDaGabriela.Agencia = 863
         ContaDaGabriela.Conta = 863141
-
-        ContaDaGabriela.Saldo = -100
 
         Lbl_BemVindo_Gabriela.Text = "Bem Vindo " + ContaDaGabriela.Titular.Nome +
             " Agência: " + ContaDaGabriela.Agencia.ToString +
@@ -58,8 +54,6 @@ Public Class Frm_Principal_02
             " CPF: " + ContaDaGabriela.Titular.CPF
         Txt_SaldoAtual_Gabriela.Text = ContaDaGabriela.GetSaldo().ToString
 
-        Bruno.Nome = "Bruno"
-        Bruno.CPF = "213546879"
         Bruno.Profissao = "Advogado"
         Bruno.Cidade = "São Paulo"
 
@@ -71,6 +65,8 @@ Public Class Frm_Principal_02
             " Agência: " + ContaDoBruno.Agencia.ToString +
             " Conta Corrente: " + ContaDoBruno.Conta.ToString
         Txt_SaldoAtual_Bruno.Text = ContaDoBruno.GetSaldo().ToString
+
+        Lbl_Numero_Clientes.Text = "O número de clientes é: " + Cliente.NumeroClientes.ToString
     End Sub
 
     Private Sub Btn_Depositar_Gabriela_Click(sender As Object, e As EventArgs) Handles Btn_Depositar_Gabriela.Click

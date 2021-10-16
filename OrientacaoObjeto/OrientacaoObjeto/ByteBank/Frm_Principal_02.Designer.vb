@@ -57,6 +57,7 @@ Partial Class Frm_Principal_02
         Me.Btn_Transferir_Bruno = New System.Windows.Forms.Button()
         Me.Btn_Sacar_Bruno = New System.Windows.Forms.Button()
         Me.Btn_Depositar_Bruno = New System.Windows.Forms.Button()
+        Me.Lbl_Numero_Clientes = New System.Windows.Forms.Label()
         Me.Grp_Gabriela.SuspendLayout()
         Me.Grp_Bruno.SuspendLayout()
         Me.SuspendLayout()
@@ -388,11 +389,21 @@ Partial Class Frm_Principal_02
         Me.Btn_Depositar_Bruno.Text = "Button6"
         Me.Btn_Depositar_Bruno.UseVisualStyleBackColor = True
         '
+        'Lbl_Numero_Clientes
+        '
+        Me.Lbl_Numero_Clientes.AutoSize = True
+        Me.Lbl_Numero_Clientes.Location = New System.Drawing.Point(425, 11)
+        Me.Lbl_Numero_Clientes.Name = "Lbl_Numero_Clientes"
+        Me.Lbl_Numero_Clientes.Size = New System.Drawing.Size(41, 15)
+        Me.Lbl_Numero_Clientes.TabIndex = 14
+        Me.Lbl_Numero_Clientes.Text = "Label1"
+        '
         'Frm_Principal_02
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(858, 429)
+        Me.Controls.Add(Me.Lbl_Numero_Clientes)
         Me.Controls.Add(Me.Grp_Bruno)
         Me.Controls.Add(Me.Grp_Gabriela)
         Me.Controls.Add(Me.Lbl_Principal)
@@ -442,4 +453,5 @@ Partial Class Frm_Principal_02
     Friend WithEvents Btn_Nome_Bruno As Button
     Friend WithEvents Txt_Nome_Bruno As TextBox
     Friend WithEvents Lbl_Nome_Bruno As Label
+    Friend WithEvents Lbl_Numero_Clientes As Label
 End Class
