@@ -1,7 +1,11 @@
-﻿Public Class Frm_Principal_02
+﻿Imports ByteBank.ByteBank
+
+Public Class Frm_Principal_02
 
     Dim ContaDaGabriela As New ContaCorrente
     Dim ContaDoBruno As New ContaCorrente
+    Dim Gabriela As New Cliente
+    Dim Bruno As New Cliente
 
     Public Sub New()
 
@@ -21,6 +25,8 @@
         Txt_Saldo_Gabriela.ReadOnly = True
         Txt_Resultado_Gabriela.ReadOnly = True
         Txt_Extrato_Gabriela.ReadOnly = True
+        Lbl_Nome_Gabriela.Text = "Nome"
+        Btn_Nome_Gabriela.Text = "..."
 
         Grp_Bruno.Text = "Bruno"
         Lbl_Valor_Bruno.Text = "Valor a ser depositado/sacado"
@@ -34,21 +40,33 @@
         Txt_Saldo_Bruno.ReadOnly = True
         Txt_Resultado_Bruno.ReadOnly = True
         Txt_Extrato_Bruno.ReadOnly = True
+        Lbl_Nome_Bruno.Text = "Nome"
+        Btn_Nome_Bruno.Text = "..."
 
-        ContaDaGabriela.Titular = "Gabriela"
+        Gabriela.Nome = "Gabriela"
+        Gabriela.CPF = "123456789"
+        Gabriela.Profissao = "Analista de Sistemas"
+        Gabriela.Cidade = "Rio de Janeiro"
+
+        ContaDaGabriela.Titular = Gabriela
         ContaDaGabriela.Agencia = 863
         ContaDaGabriela.Conta = 863141
 
-        Lbl_BemVindo_Gabriela.Text = "Bem Vindo " + ContaDaGabriela.Titular +
+        Lbl_BemVindo_Gabriela.Text = "Bem Vindo " + ContaDaGabriela.Titular.Nome +
             " Agência: " + ContaDaGabriela.Agencia.ToString +
             " Conta Corrente: " + ContaDaGabriela.Conta.ToString
         Txt_SaldoAtual_Gabriela.Text = ContaDaGabriela.Saldo.ToString
 
-        ContaDoBruno.Titular = "Bruno"
+        Bruno.Nome = "Bruno"
+        Bruno.CPF = "213546879"
+        Bruno.Profissao = "Advogado"
+        Bruno.Cidade = "São Paulo"
+
+        ContaDoBruno.Titular = Bruno
         ContaDoBruno.Agencia = 863
         ContaDoBruno.Conta = 863224
 
-        Lbl_BemVindo_Bruno.Text = "Bem Vindo " + ContaDoBruno.Titular +
+        Lbl_BemVindo_Bruno.Text = "Bem Vindo " + ContaDoBruno.Titular.Nome +
             " Agência: " + ContaDoBruno.Agencia.ToString +
             " Conta Corrente: " + ContaDoBruno.Conta.ToString
         Txt_SaldoAtual_Bruno.Text = ContaDoBruno.Saldo.ToString
@@ -175,5 +193,14 @@
             Txt_Extrato_Gabriela.Text = ContaDaGabriela.Extrato
             Txt_Extrato_Bruno.Text = ContaDoBruno.Extrato
         End If
+    End Sub
+
+    Private Sub Btn_Nome_Gabriela_Click(sender As Object, e As EventArgs) Handles Btn_Nome_Gabriela.Click
+        Dim vNome As String = Txt_Nome_Gabriela.Text
+        Gabriela.Nome = vNome
+
+        Lbl_BemVindo_Gabriela.Text = "Bem Vindo " + ContaDaGabriela.Titular.Nome +
+            " Agência: " + ContaDaGabriela.Agencia.ToString +
+            " Conta Corrente: " + ContaDaGabriela.Conta.ToString
     End Sub
 End Class
