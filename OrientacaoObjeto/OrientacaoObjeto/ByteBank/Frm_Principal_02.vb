@@ -4,7 +4,6 @@ Public Class Frm_Principal_02
 
     Dim ContaDaGabriela As New ContaCorrente
     Dim ContaDoBruno As New ContaCorrente
-    Dim Gabriela As New Cliente
     Dim Bruno As New Cliente
 
     Public Sub New()
@@ -43,12 +42,11 @@ Public Class Frm_Principal_02
         Lbl_Nome_Bruno.Text = "Nome"
         Btn_Nome_Bruno.Text = "..."
 
-        Gabriela.Nome = "Gabriela"
-        Gabriela.CPF = "123456789"
-        Gabriela.Profissao = "Analista de Sistemas"
-        Gabriela.Cidade = "Rio de Janeiro"
-
-        ContaDaGabriela.Titular = Gabriela
+        ContaDaGabriela.Titular = New Cliente()
+        ContaDaGabriela.Titular.Nome = "Gabriela"
+        ContaDaGabriela.Titular.CPF = "123456789"
+        ContaDaGabriela.Titular.Profissao = "Analista de Sistemas"
+        ContaDaGabriela.Titular.Cidade = "Rio de Janeiro"
         ContaDaGabriela.Agencia = 863
         ContaDaGabriela.Conta = 863141
 
